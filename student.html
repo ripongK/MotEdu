@@ -1,0 +1,313 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>เช็คชื่อนักเรียน MallsofT</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700&family=Sarabun:wght@400;600;700&family=Sriracha&display=swap">
+<style>
+/* Layout: แถบแบรนด์ → hero กระดานดำพร้อมแอปจริงในมือถือ → ทดลองใช้ตามบุคคล (เลือกคน + ธีม + อุปกรณ์) → ฟีเจอร์ตามบทบาท → 4 ขั้นตอน → ความปลอดภัย → คำถาม → ติดต่อ */
+:root{
+  --bg:#FBFAF7; --paper:#F2F0EA; --card:#FFFFFF; --ink:#1E2A24; --mut:#5A665F; --line:#E2DED4;
+  --o:#F26A1B; --o-ink:#B4480C; --o-soft:#FFF0E5;
+  --board:#27443A; --board-2:#1F382F; --chalk:#F4F1E6; --chalk-y:#F5E27A; --wood:#7A4C26;
+  --ok:#15803D; --late:#B45309; --bad:#B91C1C; --sick:#1D4ED8;
+  --f-d:"Prompt","Sarabun",system-ui,sans-serif; --f-b:"Sarabun",system-ui,sans-serif; --f-c:"Sriracha","Sarabun",cursive;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121614; --paper:#181D1A; --card:#1E2420; --ink:#E8ECE9; --mut:#A4AEA8; --line:#2E3631;
+  --o:#FF8A45; --o-ink:#FFB088; --o-soft:#3A2618; --board:#1F382F; --board-2:#172A23; --wood:#5E3A1C;
+  --ok:#6BD49A; --late:#F2C25B; --bad:#F59389; --sick:#93B4FF; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121614; --paper:#181D1A; --card:#1E2420; --ink:#E8ECE9; --mut:#A4AEA8; --line:#2E3631;
+  --o:#FF8A45; --o-ink:#FFB088; --o-soft:#3A2618; --board:#1F382F; --board-2:#172A23; --wood:#5E3A1C;
+  --ok:#6BD49A; --late:#F2C25B; --bad:#F59389; --sick:#93B4FF; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-b);font-size:16.5px;line-height:1.7}
+h1,h2,h3{font-family:var(--f-d);margin:0;line-height:1.3;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+button{font:inherit;cursor:pointer;color:inherit}
+button:focus-visible,a:focus-visible{outline:2px solid var(--o);outline-offset:2px}
+.band{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.in{max-width:1160px;margin:0 auto}
+.eyebrow{font-size:13px;letter-spacing:.08em;color:var(--o-ink);font-weight:700}
+.lead{color:var(--mut);max-width:62ch}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* หัว */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--wood)}
+header.band{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:linear-gradient(180deg,#8A5A2E,var(--wood));color:#FFF6E5;box-shadow:0 2px 0 rgba(0,0,0,.25)}
+header .in{display:flex;align-items:center;gap:16px;padding-block:10px}
+.logo{font-family:var(--f-d);font-weight:700;font-size:21px;white-space:nowrap}.logo b{color:var(--chalk-y)}
+header nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+header nav a{text-decoration:none;font-size:14.5px;padding:6px 10px;border-radius:8px}
+header nav a:hover{background:rgba(255,255,255,.12)}
+header nav a.cta{background:var(--chalk-y);color:#2a2410;font-weight:700}
+@media (max-width:640px){header nav a:not(.cta){display:none}}
+
+/* hero กระดานดำ */
+.hero{background:var(--board);color:var(--chalk);position:relative;overflow:hidden;
+  background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1.2px),radial-gradient(ellipse at 20% 10%,rgba(255,255,255,.08),transparent 55%);background-size:6px 6px,100% 100%}
+.hero .in{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:56px 64px}
+.hero h1{font-size:clamp(30px,4.6vw,50px);font-weight:700}
+.hero h1 .ch{font-family:var(--f-c);font-weight:400;color:var(--chalk-y);display:inline-block;transform:rotate(-2deg)}
+.hero .lead{color:#C9D6CC;margin-top:16px;font-size:18px}
+.chalkline{height:3px;width:140px;margin:22px 0;background:repeating-linear-gradient(90deg,var(--chalk) 0 14px,transparent 14px 20px);opacity:.6;border-radius:2px}
+.tally{display:flex;gap:22px;flex-wrap:wrap;margin-top:6px}
+.tally div{font-family:var(--f-c);font-size:15px;color:#C9D6CC}
+.tally b{display:block;font-family:var(--f-d);font-size:28px;color:var(--chalk);font-weight:600}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:12px 18px;font-weight:700;text-decoration:none;border:2px solid transparent;min-height:46px}
+.btn.y{background:var(--chalk-y);color:#2a2410}
+.btn.g{border:2px dashed rgba(244,241,230,.55);color:var(--chalk)}
+.eraser{position:absolute;right:6%;bottom:18px;width:84px;height:30px;border-radius:5px;background:linear-gradient(180deg,#F2EFE6 0 45%,#3B5AA6 45%);transform:rotate(-7deg);box-shadow:0 4px 0 rgba(0,0,0,.3)}
+.phone{width:min(330px,100%);aspect-ratio:9/18.5;margin:0 auto;border-radius:38px;padding:10px;background:#111;box-shadow:0 30px 60px rgba(0,0,0,.45),inset 0 0 0 2px #333;position:relative;max-width:100%}
+.phone iframe{width:100%;height:100%;border:0;border-radius:29px;background:#fff;display:block}
+
+.pinnote{position:absolute;top:-14px;left:-26px;background:#FFF7B3;color:#3b3520;font-family:var(--f-c);font-size:15px;padding:8px 12px;transform:rotate(-6deg);box-shadow:0 6px 12px rgba(0,0,0,.25);z-index:3;max-width:170px;line-height:1.35}
+.pinnote::before{content:"";position:absolute;top:-6px;left:50%;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ff8a8a,#c11);margin-left:-6px}
+@media (max-width:860px){.hero .in{grid-template-columns:1fr}.pinnote{left:0}}
+
+/* ส่วนทั่วไป */
+section.band{padding-block:72px}
+.sec-h{display:grid;gap:10px;margin-bottom:30px}
+.sec-h h2{font-size:clamp(25px,3.2vw,36px)}
+.alt{background:var(--paper)}
+
+/* ทดลองใช้ */
+.trial{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:28px;align-items:start}
+@media (max-width:920px){.trial{grid-template-columns:1fr}}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.person{text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:12px;display:grid;grid-template-columns:44px 1fr;gap:10px;align-items:center}
+.person[aria-pressed="true"]{border-color:var(--o);background:var(--o-soft);box-shadow:0 0 0 2px var(--o) inset}
+.person .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:22px;background:var(--paper)}
+.person b{display:block;font-size:15px;font-family:var(--f-d);font-weight:600}
+.person span{display:block;font-size:12.5px;color:var(--mut);line-height:1.4}
+.ctrl{margin-top:22px;display:grid;gap:10px}
+.ctrl h3{font-size:15px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:var(--card);border-radius:99px;padding:6px 12px;font-size:14px;display:inline-flex;align-items:center;gap:7px}
+.chip i{width:16px;height:16px;border-radius:50%;display:inline-block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.chip[aria-pressed="true"]{border-color:var(--o);background:var(--o-soft);font-weight:700}
+.todo{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:18px}
+.todo h3{font-size:16px;margin-bottom:8px}
+.todo ol{margin:0;padding-left:20px;display:grid;gap:4px;font-size:15px}
+.todo .hint{margin-top:10px;font-size:13.5px;color:var(--mut)}
+.stage{position:sticky;top:76px;display:grid;justify-items:center;gap:10px}
+.stage .phone{width:min(360px,100%)}
+.tablet{width:100%;max-width:640px;aspect-ratio:4/3.1;border-radius:26px;padding:14px;background:#111;box-shadow:0 24px 50px rgba(0,0,0,.3),inset 0 0 0 2px #333}
+.tablet iframe{width:100%;height:100%;border:0;border-radius:14px;background:#fff;display:block}
+.stage .cap{font-size:13px;color:var(--mut);text-align:center}
+@media (max-width:920px){.stage{position:static}}
+
+/* ฟีเจอร์ */
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.role{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:10px;align-content:start}
+.role h3{font-size:18px;display:flex;align-items:center;gap:10px}
+.role h3 em{font-style:normal;font-size:24px}
+.role ul{margin:0;padding-left:18px;display:grid;gap:5px;font-size:15px;color:var(--ink)}
+.role ul li::marker{color:var(--o)}
+.statusrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.st{font-size:12.5px;padding:2px 9px;border-radius:99px;font-weight:700;border:1.5px solid currentColor}
+
+/* ขั้นตอน */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+.step{border-top:3px solid var(--o);padding-top:14px;display:grid;gap:6px}
+.step::before{counter-increment:s;content:"ขั้นที่ " counter(s);font-size:13px;font-weight:700;color:var(--o-ink);letter-spacing:.04em}
+.step h3{font-size:17px}
+.step p{font-size:15px;color:var(--mut)}
+
+/* ความปลอดภัย */
+.safe{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.safe div{background:var(--board);color:var(--chalk);border-radius:14px;padding:18px;border:2px dashed rgba(244,241,230,.25)}
+.safe b{font-family:var(--f-c);font-weight:400;font-size:19px;color:var(--chalk-y);display:block;margin-bottom:4px}
+.safe p{font-size:14.5px;color:#C9D6CC}
+.plat{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.plat span{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 14px;font-size:14.5px}
+
+/* คำถาม */
+.faq{display:grid;gap:10px;max-width:820px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.faq summary{cursor:pointer;font-weight:700;font-family:var(--f-d);font-size:16px}
+.faq p{margin-top:8px;color:var(--mut);font-size:15.5px}
+
+/* ติดต่อ */
+.contact{background:var(--wood);color:#FFF6E5;background-image:linear-gradient(180deg,#8A5A2E,var(--wood))}
+.contact .in{display:flex;gap:24px;align-items:center;flex-wrap:wrap;padding-block:44px}
+.contact h2{font-size:clamp(24px,3vw,32px)}
+.contact .tel{font-family:var(--f-d);font-size:30px;font-weight:700;letter-spacing:.02em;user-select:all}
+.copy{background:var(--chalk-y);color:#2a2410;border:0;border-radius:10px;padding:8px 14px;font-weight:700}
+footer.band{padding-block:20px;font-size:13px;color:var(--mut);text-align:center}
+</style>
+
+<header class="band"><div class="in">
+  <div class="logo">Malls<b>o</b>fT</div>
+  <nav aria-label="เมนู"><a href="#trial">ทดลองใช้</a><a href="#features">ความสามารถ</a><a href="#steps">เริ่มใช้งาน</a><a href="#faq">คำถามที่พบบ่อย</a><a href="#contact" class="cta">ติดต่อทีมงาน</a></nav>
+</div></header>
+
+<section class="hero band"><div class="in">
+  <div>
+    <p class="eyebrow" style="color:var(--chalk-y)">ระบบเช็ครายชื่อนักเรียนประจำวัน ผ่าน LINE</p>
+    <h1 style="margin-top:10px">ครูเช็คชื่อเสร็จใน <span class="ch">1 นาที</span><br>ผู้บริหารเห็นยอดทั้งโรงเรียนทันที</h1>
+    <p class="lead">ครูที่ปรึกษาแตะชื่อนักเรียนบนมือถือหรือแท็บเล็ต ระบบรวมยอดชาย-หญิง มา สาย ขาด ลา แบบเรียลไทม์ หัวหน้าสายชั้นส่งออกรายงาน A4 ได้ ผู้ปกครองดูสถิติและแจ้งลาให้ครูผ่าน LINE ได้เลย</p>
+    <div class="chalkline" aria-hidden="true"></div>
+    <div class="tally"><div><b>6</b>บทบาทในระบบเดียว</div><div><b>7</b>ธีมให้เลือก</div><div><b>A4</b>PDF · Word · Excel</div></div>
+    <div class="btns"><a class="btn y" href="#trial">ลองใช้งานจริงด้านล่าง</a><a class="btn g" href="#contact">นัดสาธิตที่โรงเรียน</a></div>
+  </div>
+  <div style="position:relative">
+    <div class="pinnote">นี่คือแอปจริง ลองแตะชื่อนักเรียนได้เลย</div>
+    <div class="phone"><iframe id="heroApp" title="แอปเช็คชื่อ มุมมองครูที่ปรึกษา" data-qs="?as=teacher&amp;theme=backboard&amp;view=room"></iframe></div>
+  </div>
+  <div class="eraser" aria-hidden="true"></div>
+</div></section>
+
+<section class="band" id="trial"><div class="in">
+  <div class="sec-h"><p class="eyebrow">ทดลองใช้</p><h2>สวมบทบาทเป็นคนในโรงเรียน แล้วลองใช้ได้ทันที</h2>
+    <p class="lead">ข้อมูลทั้งหมดเป็นโรงเรียนสมมุติ "โรงเรียนบ้านมัลซอฟท์วิทยา" ป.1–ม.3 รวม 18 ห้อง กดได้ทุกปุ่ม ไม่มีการบันทึกจริง เลือกคนกับธีมแล้วเครื่องด้านขวาจะเปลี่ยนตาม</p></div>
+  <div class="trial">
+    <div>
+      <div class="people" id="people" role="group" aria-label="เลือกบุคคล"></div>
+      <div class="ctrl"><h3>ธีมของแอป</h3><div class="chips" id="themes" role="group" aria-label="เลือกธีม"></div></div>
+      <div class="ctrl"><h3>อุปกรณ์</h3><div class="chips" id="devices" role="group" aria-label="เลือกอุปกรณ์">
+        <button class="chip" data-dev="phone" aria-pressed="true">📱 สมาร์ทโฟน</button><button class="chip" data-dev="tablet" aria-pressed="false">💻 แท็บเล็ต / PC</button></div></div>
+      <div class="todo" id="todo"></div>
+    </div>
+    <div class="stage" id="stage"></div>
+  </div>
+</div></section>
+
+<section class="band alt" id="features"><div class="in">
+  <div class="sec-h"><p class="eyebrow">ความสามารถ</p><h2>ทุกคนในโรงเรียนเห็นข้อมูลเท่าที่ควรเห็น</h2>
+    <p class="lead">สิทธิ์แบ่งตามบทบาทและสายชั้น โรงเรียนกำหนดเองได้ว่าจะแบ่งสายชั้นแบบไหน เช่น ระดับ ม.1 ทุกห้อง หรือประถมปลาย ป.4–ป.6</p></div>
+  <div class="roles">
+    <div class="role"><h3><em>🛡️</em>แอดมิน / นายทะเบียน</h3><ul>
+      <li>นำเข้านักเรียนจากเทมเพลต Excel / Google Sheet ซ้ำได้ตลอดปี ย้ายเข้า ย้ายออก เปลี่ยนชื่อ ปรับทันที</li>
+      <li>ตั้งภาคเรียน 1, 2 และภาคฤดูร้อน กำหนดวันเปิดภาคและวันเริ่มสัปดาห์ที่ 1 (มัธยมนับสัปดาห์ ประถมนับวันเรียน)</li>
+      <li>ตั้งเวลาเริ่มเรียน เวลามาสาย อัปโหลดตราโรงเรียน (ย่อขนาดให้อัตโนมัติ) ชื่อโรงเรียนและสังกัด</li>
+      <li>กำหนดหัวหน้าสายชั้นและสิทธิ์ฝ่ายบริหารตามระดับชั้น</li>
+      <li>ตัดสิทธิ์ / รีเซ็ตบัญชี LINE ของผู้ปกครองและครูเมื่อเปลี่ยนเครื่อง</li>
+      <li>สุ่มรหัส OTP ให้ครูเช็คชื่อแทน 1 ห้อง 1 วัน ใช้ได้ครั้งเดียว</li>
+      <li>สำรองข้อมูลภาคเรียนลง Google Sheet ก่อนล้างข้อมูลเริ่มภาคใหม่</li></ul></div>
+    <div class="role"><h3><em>👩‍🏫</em>ครูที่ปรึกษา</h3><ul>
+      <li>ลงทะเบียนเองด้วยบัญชี LINE และเบอร์โทร</li>
+      <li>แตะชื่อเพื่อเช็คมา คนที่ยังไม่แตะถือว่าขาด มาทีหลังตั้งเป็นสายให้อัตโนมัติ เปลี่ยนเป็นปกติได้</li>
+      <li>เปลี่ยนขาดเป็นลาป่วย/ลากิจ พร้อมช่องเหตุผล เช่น ลาไปทำฟัน แข่งฟุตบอล</li>
+      <li>ยอดชาย หญิง รวม แยกปกติ สาย ขาด ลา แบบเรียลไทม์</li>
+      <li>ดูว่านักเรียนแต่ละคนมีผู้ปกครองดูข้อมูลกี่บัญชี แจ้งแอดมินได้เมื่อพบคนแปลกหน้า</li>
+      <li>ปฏิทินห้องที่ผู้ปกครองห้องนั้นเห็น และรับทราบใบลาจากผู้ปกครอง</li></ul>
+      <div class="statusrow"><span class="st" style="color:var(--ok)">มาปกติ</span><span class="st" style="color:var(--late)">มาสาย</span><span class="st" style="color:var(--bad)">ขาดเรียน</span><span class="st" style="color:var(--sick)">ลาป่วย / ลากิจ</span></div></div>
+    <div class="role"><h3><em>📊</em>หัวหน้าสายชั้น / กิจการนักเรียน</h3><ul>
+      <li>แดชบอร์ดเฉพาะสายชั้นที่รับผิดชอบ</li>
+      <li>ห้องที่ยังไม่เช็คชื่อ รายชื่อนักเรียนที่ขาด ลา สาย พร้อมเหตุผล</li>
+      <li>ส่งออก PDF / Word / Excel ขนาด A4 มีช่องลงชื่อ ใช้รายงานประจำวันหรือส่งต่อเจ้าหน้าที่</li>
+      <li>รายชื่อนักเรียนที่ขาด/สายบ่อย สำหรับติดตามดูแล</li></ul></div>
+    <div class="role"><h3><em>🏛️</em>ฝ่ายบริหาร</h3><ul>
+      <li>สรุปรายวัน รายสัปดาห์ ตั้งแต่เปิดภาค หรือช่วงวันที่เลือก</li>
+      <li>เลือกดูรายห้อง รายชั้น รายหลักสูตร (เช่น มัธยมศึกษาตอนต้น) หรือทั้งโรงเรียน</li>
+      <li>เลยเวลาสายแล้วห้องไหนยังไม่เช็ค กดส่งแจ้งเตือนทาง LINE ถึงครูที่ปรึกษาได้ทันที</li></ul></div>
+    <div class="role"><h3><em>👨‍👩‍👧</em>ผู้ปกครอง</h3><ul>
+      <li>ผูกบัญชีกับบุตรหลานได้หลายคน นักเรียน 1 คนมีผู้ปกครองได้ไม่เกิน 2 บัญชี</li>
+      <li>การ์ดของลูกแต่ละคน: วันนี้ สัปดาห์นี้ และตั้งแต่เปิดภาค ลากี่วัน เพราะอะไร</li>
+      <li>ปฏิทินห้องเรียน เช่น สอบกลางภาค กีฬาภายใน ตรวจสุขภาพฟัน</li>
+      <li>แจ้งลาให้ครูที่ปรึกษา เลือกลูกทีละคน ระบุวันเริ่ม วันสิ้นสุด และเหตุผล</li></ul></div>
+    <div class="role"><h3><em>🔑</em>ครูแทน (รหัส OTP)</h3><ul>
+      <li>ใช้เมื่อครูที่ปรึกษาลาหรือป่วยกะทันหัน</li>
+      <li>กรอกรหัส 6 หลักจากแอดมิน เช็คชื่อห้องที่กำหนดได้เหมือนครูที่ปรึกษา เฉพาะวันนั้น</li>
+      <li>แก้ปฏิทินห้องไม่ได้ ดูข้อมูลผู้ปกครองไม่ได้</li>
+      <li>กด "ส่งยอดและจบภารกิจ" แล้วรหัสหมดอายุทันที</li></ul></div>
+  </div>
+</div></section>
+
+<section class="band" id="steps"><div class="in">
+  <div class="sec-h"><p class="eyebrow">เริ่มใช้งาน</p><h2>ทีมงานติดตั้งให้ถึงโรงเรียน ใช้ได้ภายในวันเดียว</h2></div>
+  <div class="steps">
+    <div class="step"><h3>ตั้งค่าโรงเรียน</h3><p>ชื่อ สังกัด ตราโรงเรียน เวลาเข้าเรียน ภาคเรียน และสายชั้น</p></div>
+    <div class="step"><h3>นำเข้ารายชื่อ</h3><p>นายทะเบียนนำเข้านักเรียน หัวหน้างานบุคคลนำเข้าครูที่ปรึกษา จากเทมเพลตที่ระบบเตรียมให้</p></div>
+    <div class="step"><h3>ครูลงทะเบียน</h3><p>ครูสแกน QR เข้า LINE ของโรงเรียน กรอกเบอร์โทร ระบบจับคู่ห้องให้เอง</p></div>
+    <div class="step"><h3>แจก QR ผู้ปกครอง</h3><p>ผู้ปกครองยืนยันด้วยเลขประจำตัวและวันเกิดของนักเรียน แล้วดูข้อมูลได้ทันที</p></div>
+  </div>
+  <div class="plat"><span>💬 เปิดใน LINE</span><span>📱 สมาร์ทโฟน iOS / Android</span><span>💻 แท็บเล็ตและคอมพิวเตอร์</span><span>📄 รายงาน PDF · Word · Excel</span><span>🗂️ สำรองลง Google Sheet</span></div>
+</div></section>
+
+<section class="band alt"><div class="in">
+  <div class="sec-h"><p class="eyebrow">ความปลอดภัยของข้อมูลนักเรียน</p><h2>ข้อมูลเด็กเป็นเรื่องละเอียดอ่อน เราออกแบบให้ตรวจสอบได้</h2></div>
+  <div class="safe">
+    <div><b>ยืนยันก่อนจับคู่</b><p>ผู้ปกครองต้องรู้เลขประจำตัวและวันเกิดของนักเรียน กรอกผิดเกิน 10 ครั้งระบบล็อกชั่วคราว</p></div>
+    <div><b>จำกัด 2 บัญชีต่อคน</b><p>ครูเห็นว่านักเรียนแต่ละคนมีใครดูข้อมูลอยู่ และแจ้งแอดมินตัดสิทธิ์ได้ทันที</p></div>
+    <div><b>OTP ใช้ครั้งเดียว</b><p>ครูแทนเข้าได้เฉพาะห้องและวันที่กำหนด หมดอายุเมื่อจบภารกิจ</p></div>
+    <div><b>สิทธิ์ตามสายชั้น</b><p>หัวหน้าสายชั้นเห็นเฉพาะห้องที่รับผิดชอบ ฐานข้อมูลปิดการเข้าถึงตรง ทุกคำขอผ่านการยืนยันตัวตน LINE</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="faq"><div class="in">
+  <div class="sec-h"><p class="eyebrow">คำถามที่พบบ่อย</p><h2>ก่อนตัดสินใจ</h2></div>
+  <div class="faq">
+    <details><summary>ใช้ได้ทั้งโรงเรียนประถม มัธยม รัฐ และเอกชนไหม</summary><p>ได้ทั้งหมด รองรับอนุบาลถึง ม.6 โรงเรียนขยายโอกาสที่มีทั้งประถมและมัธยมก็ใช้ระบบเดียวกัน ประถมนับวันเรียน มัธยมนับสัปดาห์ตามที่แอดมินกำหนด</p></details>
+    <details><summary>นักเรียนย้ายเข้าย้ายออกกลางปีต้องทำอย่างไร</summary><p>นายทะเบียนนำเข้าไฟล์รายชื่อใหม่ได้ทุกเมื่อ ระบบเพิ่มคนใหม่ แก้ชื่อ ย้ายห้อง และตั้งคนที่ไม่อยู่ในไฟล์เป็น "ย้ายออก" โดยประวัติการมาเรียนเดิมยังอยู่ครบ</p></details>
+    <details><summary>ครูที่ปรึกษาลากะทันหัน ใครเช็คชื่อแทน</summary><p>แอดมินกดสุ่มรหัส OTP 6 หลักส่งให้ครูท่านใดก็ได้ ครูท่านนั้นเช็คชื่อห้องนั้นได้เฉพาะวันนั้น เมื่อส่งยอดแล้วรหัสหมดอายุ</p></details>
+    <details><summary>ผู้ปกครองเปลี่ยนโทรศัพท์หรือบัญชี LINE</summary><p>แอดมินตัดสิทธิ์บัญชีเดิม แล้วให้ผู้ปกครองลงทะเบียนใหม่ด้วยเลขประจำตัวและวันเกิดของนักเรียน ใช้เวลาไม่ถึงนาที</p></details>
+    <details><summary>หมดภาคเรียนแล้วข้อมูลไปไหน</summary><p>แอดมินกดสำรองข้อมูลทั้งภาคเรียนลง Google Sheet ใน Drive ของโรงเรียนเก็บเป็นหลักฐาน จากนั้นจึงล้างข้อมูลเพื่อเริ่มภาคใหม่ ระบบไม่ยอมให้ล้างก่อนสำรอง</p></details>
+    <details><summary>ต้องซื้ออุปกรณ์เพิ่มไหม</summary><p>ไม่ต้อง ใช้มือถือหรือแท็บเล็ตที่ครูมีอยู่แล้ว ผ่านแอป LINE ที่ทุกคนใช้เป็น</p></details>
+  </div>
+</div></section>
+
+<section class="contact band" id="contact"><div class="in">
+  <div style="flex:1;min-width:260px"><h2>ให้ทีม MallsofT ไปสาธิตที่โรงเรียน</h2><p style="opacity:.85;margin-top:6px">ทีมพัฒนามีประสบการณ์ด้านการศึกษามากกว่า 40 ปี สอบถามราคาและนัดติดตั้งได้ที่</p></div>
+  <div><div style="font-size:15px">คุณริปอง กัลติวาณิชย์</div><div class="tel" id="tel">081-434-6617</div><button class="copy" id="copyTel">คัดลอกเบอร์</button></div>
+</div></section>
+<footer class="band">ระบบเช็ครายชื่อนักเรียนประจำวัน © MallsofT · ข้อมูลในแอปสาธิตเป็นบุคคลและโรงเรียนสมมุติ</footer>
+
+<script>
+const PEOPLE = [
+  { as:'teacher', av:'👩‍🏫', name:'ครูวิภา', role:'ครูที่ปรึกษา ป.4/1', th:'backboard', todo:['แตะ "เช็คชื่อ" ด้านล่าง แล้วกด "คนที่ยังไม่เช็ค = มาปกติ"','เปลี่ยนนักเรียน 1 คนเป็น "ป่วย" แล้วพิมพ์เหตุผล','ดูยอดชาย-หญิงเปลี่ยนตามทันที แล้วกดบันทึก','หลังบันทึก ลองแตะชื่อคนที่ขาด ระบบจะตั้งเป็น "มาสาย"','แท็บ "ผู้ปกครอง": หาบัญชีชื่อแปลก xX_Ton99_Xx แล้วกดแจ้งแอดมิน','แท็บ "การลา": มีใบลาจากผู้ปกครองรอรับทราบ'] },
+  { as:'otp', av:'🔑', name:'ครูธนพล', role:'ครูแทนด้วยรหัส OTP', th:'sky', todo:['กด "ใช้รหัส OTP" แล้วกรอก 582914','เช็คชื่อห้อง ป.5/2 แทนครูประจำชั้นที่ลาป่วย','กด "ส่งยอดและจบภารกิจ"','ลองใช้รหัสเดิมอีกครั้ง ระบบจะไม่ยอม'], hint:'รหัสสาธิต: 582914' },
+  { as:'head', av:'📋', name:'ครูมานพ', role:'หัวหน้าสายชั้นประถมปลาย', th:'mint', todo:['เปิด "แดชบอร์ด" เห็นเฉพาะ ป.4–ป.6','ดูห้องที่ยังไม่เช็คชื่อและรายชื่อนักเรียนที่ขาด','เปลี่ยนเป็น "ตั้งแต่เปิดภาค" ดูนักเรียนที่ขาดบ่อย','กด PDF / Word / Excel เพื่อดูตัวอย่างรายงาน A4'] },
+  { as:'affairs', av:'🧭', name:'ครูกิตติยา', role:'ฝ่ายกิจการนักเรียน ม.ต้น', th:'sakura', todo:['เปิดแดชบอร์ด เห็นเฉพาะ ม.1–ม.3','เลือกขอบเขตเป็น "ชั้น ม.2 ทุกห้อง"','ดูสรุปรายสัปดาห์แยกชาย-หญิง'] },
+  { as:'exec', av:'🏛️', name:'ผอ.ประเสริฐ', role:'ฝ่ายบริหาร ทั้งโรงเรียน', th:'royal', todo:['เปิดแดชบอร์ด เห็นทั้ง 18 ห้อง','เลยเวลาสาย 08:00 น. แล้ว 3 ห้องยังไม่เช็ค','กด "แจ้งเตือนครูทุกห้อง" ส่ง LINE ถึงครูที่ปรึกษา','เลือก "ระดับประถมศึกษา" หรือ "กำหนดช่วง" ดูสรุป'] },
+  { as:'admin', av:'🛡️', name:'ครูสมศรี', role:'แอดมิน + นายทะเบียน', th:'mallsoft', todo:['เมนู "ผู้ดูแล" ดูขั้นตอนตั้งค่าเริ่มต้น','แท็บ "รหัส OTP": สุ่มรหัสให้ครูแทน','แท็บ "ผู้ปกครอง": มีครูแจ้งตรวจสอบ ลองตัดสิทธิ์','แท็บ "ชั้น/สายชั้น": สร้างสายชั้นของโรงเรียนเอง','แท็บ "ภาคเรียน": เพิ่มภาคฤดูร้อน'] },
+  { as:'parent', av:'👩‍👧‍👦', name:'คุณสุดา', role:'ผู้ปกครอง ลูก 2 คน', th:'sakura', todo:['ดูการ์ดลูก 2 คน ป.3/2 และ ป.5/1','ดูสถิติสัปดาห์นี้และตั้งแต่เปิดภาค','กด "แจ้งลาให้ครูที่ปรึกษา" เลือกลูกทีละคน','ดูปฏิทินห้อง เช่น ตรวจสุขภาพฟัน ทัศนศึกษา'] },
+  { as:'new', av:'🙋', name:'ผู้ใช้ใหม่', role:'เพิ่งเปิดแอปครั้งแรก', th:'night', todo:['เลือก "ครู / บุคลากร" แล้วกรอกเบอร์ 0899990000','หรือเลือก "ผู้ปกครอง" ระบบจะบอกเลขประจำตัวและวันเกิดสำหรับทดลอง'], hint:'ข้อมูลทดลองจะแสดงในข้อความแจ้งเตือนของแอป' },
+];
+const THEMES = [['mallsoft','ส้ม MallsofT','#F26A1B'],['backboard','กระดานดำ','#27443A'],['sky','ฟ้าใส','#1E78D6'],['mint','เขียวมิ้นต์','#0E9F6E'],['sakura','ชมพูซากุระ','#DB2777'],['royal','น้ำเงินราชการ','#1F3A8A'],['night','กลางคืน','#1B2027']];
+const S = { as:'teacher', th:'backboard', dev:'phone' };
+/* แอปสาธิตโหลดจากไฟล์ app.html แล้วใส่ลงกรอบด้วย srcdoc (กรอบแบบลิงก์ถูกหน้าเว็บบล็อก) */
+let APP_HTML = null, APP_P = null;
+function getApp() {
+  if (!APP_P) APP_P = fetch('app.html').then(r => { if (!r.ok) throw new Error(r.status); return r.text(); }).then(t => (APP_HTML = t));
+  return APP_P;
+}
+function loadFrames() {
+  document.querySelectorAll('iframe[data-qs]').forEach(f => {
+    if (f.dataset.done === f.dataset.qs) return;
+    f.dataset.done = f.dataset.qs;
+    const qs = f.dataset.qs.replace(/"/g, '');
+    getApp().then(html => {
+      f.srcdoc = html.replace('<head>', `<head><script>window.DEMO_QS=${JSON.stringify(qs)};<\/script>`);
+    }).catch(() => {
+      f.srcdoc = '<p style="font-family:sans-serif;padding:24px;color:#555">โหลดแอปสาธิตไม่สำเร็จ กรุณารีเฟรชหน้านี้</p>';
+    });
+  });
+}
+
+const $ = id => document.getElementById(id);
+function render() {
+  $('people').innerHTML = PEOPLE.map(p => `<button class="person" data-as="${p.as}" aria-pressed="${p.as === S.as}"><span class="av">${p.av}</span><span><b>${p.name}</b><span>${p.role}</span></span></button>`).join('');
+  $('themes').innerHTML = THEMES.map(([k,n,c]) => `<button class="chip" data-th="${k}" aria-pressed="${k === S.th}"><i style="background:${c}"></i>${n}</button>`).join('');
+  document.querySelectorAll('#devices [data-dev]').forEach(b => b.setAttribute('aria-pressed', b.dataset.dev === S.dev));
+  const p = PEOPLE.find(x => x.as === S.as);
+  $('todo').innerHTML = `<h3>ลองทำตามนี้ในบทบาท${p.name}</h3><ol>${p.todo.map(t => `<li>${t}</li>`).join('')}</ol>${p.hint ? `<p class="hint">${p.hint}</p>` : ''}`;
+  $('stage').innerHTML = `<div class="${S.dev}"><iframe title="แอปสาธิต มุมมอง${p.role}" data-qs="?as=${S.as}&theme=${S.th}"></iframe></div><p class="cap">${p.av} ${p.name} · ${p.role} · กดเปลี่ยนคนหรือธีมเพื่อเริ่มใหม่</p>`;
+  loadFrames();
+  document.querySelectorAll('[data-as]').forEach(b => b.onclick = () => { S.as = b.dataset.as; S.th = PEOPLE.find(x => x.as === S.as).th; render(); });
+  document.querySelectorAll('[data-th]').forEach(b => b.onclick = () => { S.th = b.dataset.th; render(); });
+}
+document.querySelectorAll('#devices [data-dev]').forEach(b => b.onclick = () => { S.dev = b.dataset.dev; render(); });
+render();
+$('copyTel').onclick = () => {
+  const done = () => { $('copyTel').textContent = 'คัดลอกแล้ว'; setTimeout(() => $('copyTel').textContent = 'คัดลอกเบอร์', 2000); };
+  try { navigator.clipboard.writeText('0814346617').then(done, () => { const r = document.createRange(); r.selectNodeContents($('tel')); getSelection().removeAllRanges(); getSelection().addRange(r); }); } catch (e) {}
+};
+</script>
+
+</body></html>
